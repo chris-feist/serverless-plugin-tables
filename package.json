@@ -1,0 +1,35 @@
+{
+  "name": "serverless-plugin-tables",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "scripts": {
+    "preinstall": "npx use-yarn",
+    "test": "jest",
+    "integration": "jest --config jest.integration.config.js",
+    "lint": "yarn run lint:eslint",
+    "lint:eslint": "eslint . --ext .js"
+  },
+  "keywords": [
+    "serverless",
+    "serverless-plugin",
+    "aws",
+    "dynamodb"
+  ],
+  "files": [
+    "/lib"
+  ],
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "jest": "^24.1.0",
+    "serverless": "^1.37.1"
+  },
+  "dependencies": {
+    "merge-deep": "^3.0.2",
+    "object-mapper": "^5.0.0",
+    "pascal-case": "^2.0.1"
+  }
+}
