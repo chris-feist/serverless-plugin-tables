@@ -8,6 +8,7 @@ module.exports = {
   },
   rules: {
     'arrow-parens': ['error', 'always'],
+    'no-continue': 'off',
 
     // Jest
     'jest/no-disabled-tests': 'error',
