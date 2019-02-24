@@ -212,7 +212,7 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 | sortKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup>  | The sort key. Refer to [keys](#keys) |
 | readUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned read units |
 | writeUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned write units |
-| projection | *false* | The [projected fields][link-dynamo-index-projection]. Possible values include:<br>`all` - **Default** - The entire record<br>`keys` - Only keys<br>A list of fields |
+| projection | *false* | The [projected fields][link-dynamo-index-projection]. Possible values include:<br>`all` - **[Default]** The entire record<br>`keys` - Only keys<br>A list of fields |
 
 <a name="footnote-dynamo-index-key">1</a>: At least on key is required
 
