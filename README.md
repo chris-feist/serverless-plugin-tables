@@ -148,7 +148,7 @@ resources:
             ReadCapacityUnits : 1
 ```
 
-### Dynamo DB
+### DynamoDB
 
 ##### Type: `dynamo`
 
