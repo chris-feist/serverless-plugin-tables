@@ -213,11 +213,13 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 | writeUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned write units |
 | projection | *false* | The [projected fields][link-dynamo-index-projection]. Possible values include:<br>`all` - **[Default]** The entire record<br>`keys` - Only keys<br>A list of fields |
 
-<a name="footnote-dynamo-index-key">1</a>: At least on key is required
+<a name="footnote-dynamo-index-key">[1]</a>: At least on key is required
 
-<a name="footnote-dynamo-index-units">2</a>: Required if defined for the table
+<a name="footnote-dynamo-index-units">[2]</a>: Required if defined for the table
 
-#### <a name="dynamo-stream-types"></a> [Stream Types][link-dynamo-stream-types]:
+#### <a name="dynamo-stream-types"></a> Stream Types:
+
+_Corresponds to [DynamoDB Stream Types][link-dynamo-stream-types]_
 
 | Value        | Description |
 |--------------|-------------|
