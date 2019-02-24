@@ -11,7 +11,7 @@ This [Serverless][link-serverless] plugin makes adding tables to your service fi
 
 ## Benefits
 - Less boilerplate
-- Sane defaults
+- Common defaults
 - Integrates with existing resources
 - Handles deployment limits
   - [Dynamo][link-dynamo-deployment-limit]
@@ -212,6 +212,7 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 | sortKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup>  | The sort key. Refer to [keys](#keys) |
 | readUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned read units |
 | writeUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned write units |
+| projection | *false* | The [projected fields][link-dynamo-index-projection]. Possible values include:<br>`all` - **Default** - The entire record<br>`keys` - Only keys<br>A list of fields |
 
 <a name="footnote-dynamo-index-key">1</a>: At least on key is required
 
@@ -255,3 +256,4 @@ If your provider or database isn't support, [open an issue to request it!][link-
 [link-dynamo-tags]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html
 [link-dynamo-gsi]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html
 [link-dynamo-lsi]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html
+[link-dynamo-index-projection]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html
