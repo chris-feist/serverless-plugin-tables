@@ -12,7 +12,5 @@ install:
 
 script:
   - yarn run lint
-  # TODO: Enable testing
-  # - yarn run test
-  # - yarn run integration
-  # - codecov
+  - yarn run test
+  - codecov
