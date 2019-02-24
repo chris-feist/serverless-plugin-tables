@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dynamo default export 1`] = `
+Object {
+  "postProcessSteps": Array [
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "tableSteps": Array [
+    [Function],
+    [Function],
+    [Function],
+  ],
+}
+`;
+
+exports[`dynamo end to end 1`] = `
+Object {
+  "Resources": Object {
+    "ExistingDynamoDBTable": Object {
+      "DependsOn": Array [
+        "FavoritePeopleDynamoTable",
+      ],
+      "Properties": Object {
+        "AttributeDefinitions": Array [
+          Object {
+            "AttributeName": "userID",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "email",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "createdTime",
+            "AttributeType": "N",
+          },
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": Array [
+          Object {
+            "AttributeName": "userID",
+            "KeyType": "HASH",
+          },
+          Object {
+            "AttributeName": "email",
+            "KeyType": "RANGE",
+          },
+        ],
+        "LocalSecondaryIndexes": Array [
+          Object {
+            "IndexName": "UsersTableEmailGSI",
+            "KeySchema": Array [
+              Object {
+                "AttributeName": "userID",
+                "KeyType": "HASH",
+              },
+              Object {
+                "AttributeName": "createdTime",
+                "KeyType": "RANGE",
+              },
+            ],
+            "Projection": Object {
+              "ProjectionType": "ALL",
+            },
+          },
+        ],
+        "TableName": "ExistingTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+    "FavoritePeopleDynamoTable": Object {
+      "Properties": Object {
+        "AttributeDefinitions": Array [
+          Object {
+            "AttributeName": "personID",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "state",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "email",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "createdTime",
+            "AttributeType": "N",
+          },
+          Object {
+            "AttributeName": "age",
+            "AttributeType": "N",
+          },
+        ],
+        "BillingMode": "PROVISIONED",
+        "GlobalSecondaryIndexes": Array [
+          Object {
+            "IndexName": "EmailIndex",
+            "KeySchema": Array [
+              Object {
+                "AttributeName": "email",
+                "KeyType": "HASH",
+              },
+            ],
+            "Projection": Object {
+              "ProjectionType": "ALL",
+            },
+            "ProvisionedThroughput": Object {
+              "ReadCapacityUnits": 2,
+              "WriteCapacityUnits": 2,
+            },
+          },
+        ],
+        "KeySchema": Array [
+          Object {
+            "AttributeName": "personID",
+            "KeyType": "HASH",
+          },
+          Object {
+            "AttributeName": "state",
+            "KeyType": "RANGE",
+          },
+        ],
+        "LocalSecondaryIndexes": Array [
+          Object {
+            "IndexName": "PersonByCreatedTimeIndex",
+            "KeySchema": Array [
+              Object {
+                "AttributeName": "personID",
+                "KeyType": "HASH",
+              },
+              Object {
+                "AttributeName": "createdTime",
+                "KeyType": "RANGE",
+              },
+            ],
+            "Projection": Object {
+              "ProjectionType": "KEYS_ONLY",
+            },
+            "ProvisionedThroughput": Object {
+              "ReadCapacityUnits": 2,
+              "WriteCapacityUnits": 2,
+            },
+          },
+          Object {
+            "IndexName": "PersonByAgeIndex",
+            "KeySchema": Array [
+              Object {
+                "AttributeName": "personID",
+                "KeyType": "HASH",
+              },
+              Object {
+                "AttributeName": "age",
+                "KeyType": "RANGE",
+              },
+            ],
+            "Projection": Object {
+              "NonKeyAttributes": Array [
+                "dob",
+                "firstName",
+                "lastName",
+              ],
+              "ProjectionType": "INCLUDE",
+            },
+            "ProvisionedThroughput": Object {
+              "ReadCapacityUnits": 2,
+              "WriteCapacityUnits": 2,
+            },
+          },
+        ],
+        "PointInTimeRecoverySpecification": Object {
+          "PointInTimeRecoveryEnabled": true,
+        },
+        "ProvisionedThroughput": Object {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 5,
+        },
+        "SSESpecification": Object {
+          "SSEEnabled": true,
+        },
+        "StreamSpecification": Object {
+          "StreamViewType": "NEW_IMAGE",
+        },
+        "TableName": "People",
+        "Tags": Array [
+          Object {
+            "Key": "STAGE",
+            "Value": "test",
+          },
+          Object {
+            "Key": "TEAM",
+            "Value": "backend",
+          },
+        ],
+        "TimeToLiveSpecification": Object {
+          "AttributeName": "expirationTime",
+          "Enabled": true,
+        },
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+    "MusicDynamoDbTable": Object {
+      "Properties": Object {
+        "AttributeDefinitions": Array [
+          Object {
+            "AttributeName": "Artist",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "SongTitle",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "Genre",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "AlbumTitle",
+            "AttributeType": "S",
+          },
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "GlobalSecondaryIndexes": Array [
+          Object {
+            "IndexName": "GenreByTitleIndex",
+            "KeySchema": Array [
+              Object {
+                "AttributeName": "Genre",
+                "KeyType": "HASH",
+              },
+              Object {
+                "AttributeName": "AlbumTitle",
+                "KeyType": "RANGE",
+              },
+            ],
+            "Projection": Object {
+              "ProjectionType": "ALL",
+            },
+          },
+        ],
+        "KeySchema": Array [
+          Object {
+            "AttributeName": "Artist",
+            "KeyType": "HASH",
+          },
+          Object {
+            "AttributeName": "SongTitle",
+            "KeyType": "RANGE",
+          },
+        ],
+        "TableName": "Music",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+}
+`;
