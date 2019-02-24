@@ -65,7 +65,7 @@ resources:
 
 ### Plugin options
 
-The plugin can be configured by defining a custom `tables` object in your `serverless.yml` file. Database specific options should be defined as properties under their database type, like `dynamo`. See database specs for related options. Example `serverless.yml` file:
+The plugin can be configured by defining a custom `tables` object in your `serverless.yml` file. Database specific options should be defined as properties under their database type, like `dynamo`. See database specs for related options. Example options `serverless.yml`:
 
 ```yaml
 custom:
@@ -78,7 +78,7 @@ custom:
 
 ## AWS
 
-##### Common properties:
+#### Common properties:
 
 | Property     | Required | Default Value | Description |
 |--------------|----------|---------------|-------------|
@@ -86,7 +86,7 @@ custom:
 | type         | *false*  | `'dynamo'` | The database type. Please refer to corresponding database sections below. |
 | template     | *false*  | `null` | Custom CloudFormation template overrides. This allows you to implement features not covered, override the generated output, or do whatever other crazy stuff you have in mind 😀 |
 
-##### Example
+#### Example
 ```yaml
 resources:
   tables:
@@ -154,13 +154,13 @@ resources:
 
 _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo-on-demand-billing]_.
 
-##### Options
+#### Options
 
 | Property     | Default Value | Description |
 |--------------|----------|-------------|
 | deploymentBatchSize | `10` | The deployment batch size. Do not exceed the [AWS limits][link-dynamo-deployment-limit] |
 
-##### Properties:
+#### Properties:
 
 | Property     | Required | Description |
 |--------------|----------|-------------|
@@ -174,7 +174,8 @@ _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo
 | encrypted | *false* | Enable [encryption][link-dynamo-encryption] |
 | pointInTimeRecovery | *false* | Enable [Point-in-Time Recover][link-dynamo-recovery] |
 
-##### <a name="dynamo-keys"></a> Keys:
+#### <a name="dynamo-keys"></a> Keys:
+
 Keys can be a `string` or an `object`. If a string is provided, then that will be the key name and it will be of data type `string`.
 
 | Property     | Required | Description |
@@ -182,7 +183,9 @@ Keys can be a `string` or an `object`. If a string is provided, then that will b
 | name         | **true** | The name of the key |
 | type         | **true** | The [data type](#dynamo-data-types) of the key |
 
-##### <a name="dynamo-data-types"></a> [Data Types][link-dynamo-data-types]:
+#### <a name="dynamo-data-types"></a> Data Types:
+
+_Corresponds to [DynamoDB Data Types][link-dynamo-data-types]_
 
 | Value        | Description |
 |--------------|-------------|
@@ -191,7 +194,8 @@ Keys can be a `string` or an `object`. If a string is provided, then that will b
 | `binary`     | ByteBuffer |
 | `boolean`    | Boolean |
 
-##### <a name="dynamo-indexes"></a>Indexes:
+#### <a name="dynamo-indexes"></a>Indexes:
+
 Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. The difference being that Local indexes share the same partition key as the table. Therefore, to create a Local index, just omit the `partitionKey` field.
 
 | Property     | Required | Description |
@@ -206,8 +210,7 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 
 <a name="footnote-dynamo-index-units">2</a>: Required if defined for the table
 
-
-##### <a name="dynamo-stream-types"></a> [Stream Types][link-dynamo-stream-types]:
+#### <a name="dynamo-stream-types"></a> [Stream Types][link-dynamo-stream-types]:
 
 | Value        | Description |
 |--------------|-------------|
