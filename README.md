@@ -192,8 +192,14 @@ _Corresponds to [DynamoDB Data Types][link-dynamo-data-types]_
 |--------------|-------------|
 | `string`     | String |
 | `number`     | Number |
-| `binary`     | ByteBuffer |
+| `binary`     | Binary |
 | `boolean`    | Boolean |
+| `list`       | List |
+| `map`        | Map |
+| `numberSet`  | Number Set |
+| `stringSet`  | String Set |
+| `binarySet`  | Binary Set |
+| `null`       | Null |
 
 #### <a name="dynamo-indexes"></a>Indexes:
 
@@ -239,7 +245,7 @@ If your provider or database isn't support, [open an issue to request it!][link-
 [link-coverage]: https://codecov.io/gh/chris-feist/serverless-plugin-tables
 [link-dynamo-deployment-limit]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html#limits-api
 [link-open-issue]: https://github.com/chris-feist/serverless-plugin-tables/issues
-[link-dynamo-data-types]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBMapper.DataTypes.html
+[link-dynamo-data-types]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes
 [link-dynamo-on-demand-billing]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand
 [link-dynamo-provisioned-billing]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual
 [link-dynamo-stream-types]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
