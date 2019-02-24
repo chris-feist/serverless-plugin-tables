@@ -1,0 +1,76 @@
+service: serverless-plugin-tables-example-aws
+
+plugins:
+  - serverless-plugin-tables
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-west-2
+
+custom:
+  tables: 
+    dynamo:
+      # Dynamo options
+      deploymentBatchSize: 5
+
+functions:
+  hello:
+    handler: handler.hello
+
+resources:
+  tables:
+    # Simple DynamoDB Table
+    Music:
+      partitionKey: Artist
+      sortKey: SongTitle
+      indexes:
+        - name: GenreByTitleIndex
+          partitionKey: Genre
+          sortKey: AlbumTitle
+  
+    # Complex DynamoDB Table
+    People:
+      resourceName: FavoritePeopleDynamoTable
+      partitionKey: personID
+      sortKey: state
+      readUnits: 5
+      writeUnits: 5
+      indexes:
+        # Global Secondary Index
+        - name: EmailIndex
+          partitionKey: email
+          readUnits: 2
+          writeUnits: 2
+          projection: all
+        # Local Secondary Index
+        - name: PersonByCreatedTimeIndex
+          sortKey: 
+            name: createdTime
+            type: number
+          readUnits: 2
+          writeUnits: 2
+          projection: keys
+        # Local Secondary Index with projection
+        - name: PersonByAgeIndex
+          sortKey: 
+            name: age
+            type: number
+          readUnits: 2
+          writeUnits: 2
+          projection:
+            - dob
+            - firstName
+            - lastName
+      streamType: newItem
+      ttlKey: expirationTime
+      encrypted: true
+      pointInTimeRecovery: true
+      tags:
+        STAGE: test
+        TEAM: backend
+      template: 
+        # Override the computed CF template
+        Properties: 
+          ProvisionedThroughput:
+            ReadCapacityUnits : 1
