@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handleDeploymentLimit batches tables 1`] = `
+Array [
+  Object {
+    "res3": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res4": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res5": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res6": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res7": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res8": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res9": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res1": Object {
+      "DependsOn": Array [
+        "res9",
+      ],
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res10": Object {
+      "DependsOn": Array [
+        "res9",
+      ],
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res2": Object {
+      "DependsOn": Array [
+        "res1",
+        "res10",
+      ],
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res11": Object {
+      "DependsOn": Array [
+        "res10",
+      ],
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res12": Object {
+      "DependsOn": Array [
+        "res11",
+      ],
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+]
+`;
+
+exports[`handleDeploymentLimit createBatch creates a batch assigns depends on 1`] = `
+Array [
+  Object {
+    "res3": Object {
+      "DependsOn": Array [
+        "otherRes",
+      ],
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res4": Object {
+      "DependsOn": Array [
+        "otherRes",
+      ],
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res5": Object {
+      "DependsOn": Array [
+        "res999",
+        "otherRes",
+      ],
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+]
+`;
+
+exports[`handleDeploymentLimit createBatch creates a batch assigns depends on 2`] = `
+Array [
+  Object {
+    "res1": Object {
+      "DependsOn": "res4",
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res2": Object {
+      "DependsOn": "res5",
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+]
+`;
+
+exports[`handleDeploymentLimit createBatch creates a batch with internal dependencies 1`] = `
+Array [
+  Object {
+    "res2": Object {
+      "DependsOn": "res1000",
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res3": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res4": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res5": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res6": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+]
+`;
+
+exports[`handleDeploymentLimit createBatch creates a batch with internal dependencies 2`] = `
+Array [
+  Object {
+    "res1": Object {
+      "DependsOn": "res9",
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res7": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res8": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res9": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res10": Object {
+      "DependsOn": "res9",
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res11": Object {
+      "DependsOn": "res10",
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+  Object {
+    "res12": Object {
+      "DependsOn": "res11",
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+]
+`;
