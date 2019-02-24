@@ -167,7 +167,7 @@ _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo
 | sortKey | *false* | The sort key. Refer to [keys](#dynamo-keys) |
 | readUnits | *false* | The provisioned read units. Setting this changes the table to [provisioned][link-dynamo-provisioned-billing] billing mode. |
 | writeUnits | *false*  | The provisioned write units. Setting this changes the table to [provisioned][link-dynamo-provisioned-billing] billing mode. |
-| indexes | *false* | List of [indexes](#dynamo-indexes)  |
+| indexes | *false* | List of secondary [indexes](#dynamo-indexes)  |
 | streamType | *false* | The [stream type][link-dynamo-stream-types] of the table. See [Stream Types](#dynamo-stream-types) for valid values. |
 | ttlKey | *false* | The [Time To Live][link-dynamo-ttl] field |
 | encrypted | *false* | Enable [encryption][link-dynamo-encryption] |
