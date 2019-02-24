@@ -79,6 +79,7 @@ custom:
 ## AWS
 
 ##### Common properties:
+
 | Property     | Required | Default Value | Description |
 |--------------|----------|---------------|-------------|
 | resourceName | *false*  | `'{pascalCase(tableName)}DynamoDbTable'` | The CloudFormation resource name. The default runs your table name through a pascal case transformation. |
@@ -160,6 +161,7 @@ _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo
 | deploymentBatchSize | `10` | The deployment batch size. Do not exceed the [AWS limits][link-dynamo-deployment-limit] |
 
 ##### Properties:
+
 | Property     | Required | Description |
 |--------------|----------|-------------|
 | partitionKey | **true** | The partition key. Refer to [keys](#dynamo-keys) |
@@ -174,12 +176,14 @@ _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo
 
 ##### <a name="dynamo-keys"></a> Keys:
 Keys can be a `string` or an `object`. If a string is provided, then that will be the key name and it will be of data type `string`.
-| Property     | Required | Default Value | Description |
-|--------------|----------|---------------|-------------|
-| name         | **true** |  | The name of the key |
-| type         | **true** |  | The [data type](#dynamo-data-types) of the key |
+
+| Property     | Required | Description |
+|--------------|----------|-------------|
+| name         | **true** | The name of the key |
+| type         | **true** | The [data type](#dynamo-data-types) of the key |
 
 ##### <a name="dynamo-data-types"></a> [Data Types][link-dynamo-data-types]:
+
 | Value        | Description |
 |--------------|-------------|
 | `string`     | String |
@@ -189,6 +193,7 @@ Keys can be a `string` or an `object`. If a string is provided, then that will b
 
 ##### <a name="dynamo-indexes"></a>Indexes:
 Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. The difference being that Local indexes share the same partition key as the table. Therefore, to create a Local index, just omit the `partitionKey` field.
+
 | Property     | Required | Description |
 |--------------|----------|-------------|
 | name | **true** | The name of the index |
@@ -203,6 +208,7 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 
 
 ##### <a name="dynamo-stream-types"></a> [Stream Types][link-dynamo-stream-types]:
+
 | Value        | Description |
 |--------------|-------------|
 | `newItem`    | Enable stream with new item/image only |
