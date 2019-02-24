@@ -225,7 +225,7 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 | `newItem`    | Enable stream with new item/image only |
 | `oldItem`    | Enable stream with old item/image only |
 | `both`       | Enable stream with new and old items |
-| `keysOnly`   | Enable stream with keys only |
+| `keys`       | Enable stream with keys only |
 
 ## Others
 
