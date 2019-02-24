@@ -173,6 +173,7 @@ _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo
 | ttlKey | *false* | The [Time To Live][link-dynamo-ttl] field |
 | encrypted | *false* | Enable [encryption][link-dynamo-encryption] |
 | pointInTimeRecovery | *false* | Enable [Point-in-Time Recover][link-dynamo-recovery] |
+| tags | *false* | Key-value pairs of [resource tags][link-dynamo-tags] |
 
 #### <a name="dynamo-keys"></a> Keys:
 
@@ -245,5 +246,6 @@ If your provider or database isn't support, [open an issue to request it!][link-
 [link-dynamo-ttl]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html
 [link-dynamo-encryption]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html
 [link-dynamo-recovery]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html
+[link-dynamo-tags]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html
 [link-dynamo-gsi]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html
 [link-dynamo-lsi]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html
