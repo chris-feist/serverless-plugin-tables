@@ -83,7 +83,7 @@ custom:
 |--------------|----------|---------------|-------------|
 | resourceName | *false*  | `'{pascalCase(tableName)}DynamoDbTable'` | The CloudFormation resource name. The default runs your table name through a pascal case transformation. |
 | type         | *false*  | `'dynamo'` | The database type. Please refer to corresponding database sections below. |
-| template     | *false*  | `null` | This allows for any custom CloudFormation template overrides. This allows you to implement features not covered, override the generated output, or do whatever other crazy stuff you have in mind 😀 |
+| template     | *false*  | `null` | Custom CloudFormation template overrides. This allows you to implement features not covered, override the generated output, or do whatever other crazy stuff you have in mind 😀 |
 
 ##### Example
 ```yaml
@@ -162,24 +162,24 @@ _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo
 ##### Properties:
 | Property     | Required | Description |
 |--------------|----------|-------------|
-| partitionKey | **true** | The partition key. Refer to [keys](#keys) |
-| sortKey | *false* | The sort key. Refer to [keys](#keys) |
+| partitionKey | **true** | The partition key. Refer to [keys](#dynamo-keys) |
+| sortKey | *false* | The sort key. Refer to [keys](#dynamo-keys) |
 | readUnits | *false* | The provisioned read units. Setting this changes the table to [provisioned][link-dynamo-provisioned-billing] billing mode. |
 | writeUnits | *false*  | The provisioned write units. Setting this changes the table to [provisioned][link-dynamo-provisioned-billing] billing mode. |
-| indexes | *false* | List of [indexes](#indexes)  |
-| streamType | *false* | The [stream type][link-dynamo-stream-types] of the table. See [Stream Types](#stream-types) for valid values. |
+| indexes | *false* | List of [indexes](#dynamo-indexes)  |
+| streamType | *false* | The [stream type][link-dynamo-stream-types] of the table. See [Stream Types](#dynamo-stream-types) for valid values. |
 | ttlKey | *false* | The [Time To Live][link-dynamo-ttl] field |
 | encrypted | *false* | Enable [encryption][link-dynamo-encryption] |
 | pointInTimeRecovery | *false* | Enable [Point-in-Time Recover][link-dynamo-recovery] |
 
-##### Keys:
+##### <a name="dynamo-keys"></a> Keys:
 Keys can be a `string` or an `object`. If a string is provided, then that will be the key name and it will be of data type `string`.
 | Property     | Required | Default Value | Description |
 |--------------|----------|---------------|-------------|
 | name         | **true** |  | The name of the key |
-| type         | **true** |  | The [data type](#data-types) of the key |
+| type         | **true** |  | The [data type](#dynamo-data-types) of the key |
 
-##### [Data Types][link-dynamo-data-types]:
+##### <a name="dynamo-data-types"></a> [Data Types][link-dynamo-data-types]:
 | Value        | Description |
 |--------------|-------------|
 | `string`     | String |
@@ -187,17 +187,22 @@ Keys can be a `string` or an `object`. If a string is provided, then that will b
 | `binary`     | ByteBuffer |
 | `boolean`    | Boolean |
 
-##### Indexes:
+##### <a name="dynamo-indexes"></a>Indexes:
 Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. The difference being that Local indexes share the same partition key as the table. Therefore, to create a Local index, just omit the `partitionKey` field.
 | Property     | Required | Description |
 |--------------|----------|-------------|
 | name | **true** | The name of the index |
-| partitionKey | *false*[^footnote-dynamo-index-key] | The partition key. Refer to [keys](#keys) |
-| sortKey | *false*[^footnote-dynamo-index-key] | The sort key. Refer to [keys](#keys) |
-| readUnits | *true* [^footnote-dynamo-index-units] | The provisioned read units |
-| writeUnits | *true* [^footnote-dynamo-index-units] | The provisioned write units |
+| partitionKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup> | The partition key. Refer to [keys](#keys) |
+| sortKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup> | The sort key. Refer to [keys](#keys) |
+| readUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup> | The provisioned read units |
+| writeUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup> | The provisioned write units |
 
-##### [Stream Types][link-dynamo-stream-types]:
+<a name="footnote-dynamo-index-key">1</a>: At least on key is required
+
+<a name="footnote-dynamo-index-units">2</a>: Required if defined for the table
+
+
+##### <a name="dynamo-stream-types"></a> [Stream Types][link-dynamo-stream-types]:
 | Value        | Description |
 |--------------|-------------|
 | `newItem`    | Enable stream with new item/image only |
@@ -208,9 +213,6 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 ## Others
 
 If your provider or database isn't support, [open an issue to request it!][link-open-issue]
-
-[^footnote-dynamo-index-key]: At least on key is required
-[^footnote-dynamo-index-units]: Required if defined for the table
 
 [icon-serverless]: http://public.serverless.com/badges/v3.svg
 [icon-license]: https://img.shields.io/github/license/chris-feist/serverless-plugin-tables.svg
