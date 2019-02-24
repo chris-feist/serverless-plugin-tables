@@ -192,10 +192,10 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 | Property     | Required | Description |
 |--------------|----------|-------------|
 | name | **true** | The name of the index |
-| partitionKey | *false* | The partition key. Refer to [keys](#keys) |
-| sortKey | *false* | The sort key. Refer to [keys](#keys) |
-| readUnits | *true* if defined for table | The provisioned read units |
-| writeUnits | *true* if defined for table | The provisioned write units |
+| partitionKey | *false*[^footnote-dynamo-index-key] | The partition key. Refer to [keys](#keys) |
+| sortKey | *false*[^footnote-dynamo-index-key] | The sort key. Refer to [keys](#keys) |
+| readUnits | *true* [^footnote-dynamo-index-units] | The provisioned read units |
+| writeUnits | *true* [^footnote-dynamo-index-units] | The provisioned write units |
 
 ##### [Stream Types][link-dynamo-stream-types]:
 | Value        | Description |
@@ -208,6 +208,9 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 ## Others
 
 If your provider or database isn't support, [open an issue to request it!][link-open-issue]
+
+[^footnote-dynamo-index-key]: At least on key is required
+[^footnote-dynamo-index-units]: Required if defined for the table
 
 [icon-serverless]: http://public.serverless.com/badges/v3.svg
 [icon-license]: https://img.shields.io/github/license/chris-feist/serverless-plugin-tables.svg
