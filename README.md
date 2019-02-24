@@ -192,10 +192,10 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 | Property     | Required | Description |
 |--------------|----------|-------------|
 | name | **true** | The name of the index |
-| partitionKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup> | The partition key. Refer to [keys](#keys) |
-| sortKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup> | The sort key. Refer to [keys](#keys) |
-| readUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup> | The provisioned read units |
-| writeUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup> | The provisioned write units |
+| partitionKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup>  | The partition key. Refer to [keys](#keys) |
+| sortKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup>  | The sort key. Refer to [keys](#keys) |
+| readUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned read units |
+| writeUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned write units |
 
 <a name="footnote-dynamo-index-key">1</a>: At least on key is required
 
