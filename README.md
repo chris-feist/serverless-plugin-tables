@@ -127,7 +127,6 @@ resources:
           sortKey: 
             name: age
             type: number
-          dataType: number
           projection:
             - dob
             - firstName
