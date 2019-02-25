@@ -76,6 +76,12 @@ custom:
 
 # Providers
 
+#### Common properties:
+
+| Property     | Required | Default Value | Description |
+|--------------|----------|---------------|-------------|
+| name         | *false*  | The table key | The name of the table |
+
 ## AWS
 
 #### Common properties:
@@ -101,6 +107,7 @@ resources:
 
     # Complex DynamoDB Table
     People:
+      name: ${env:PEOPLE_TABLE_NAME}
       resourceName: FavoritePeopleDynamoTable
       type: dynamo
       partitionKey: personID

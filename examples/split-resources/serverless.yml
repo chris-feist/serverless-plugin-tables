@@ -1,0 +1,17 @@
+service: serverless-plugin-tables-example
+
+plugins:
+  - serverless-plugin-tables
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-west-2
+
+functions:
+  hello:
+    handler: handler.hello
+
+resources:
+  - ${file(./music-tables.yml)}
+  - ${file(./users-tables.yml)}

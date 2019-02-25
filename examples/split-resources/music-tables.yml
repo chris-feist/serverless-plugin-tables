@@ -1,0 +1,4 @@
+tables:
+  Music:
+    partitionKey: Artist
+    sortKey: SongTitle

@@ -1,0 +1,32 @@
+service: serverless-plugin-tables-example
+
+plugins:
+  - serverless-plugin-tables
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-west-2
+  stage: beta
+
+custom:
+  musicTableName: MyMusicTable
+
+functions:
+  hello:
+    handler: handler.hello
+
+resources:
+  tables:
+    Music:
+      name: ${self:custom.musicTableName}
+      partitionKey: Artist
+      sortKey: SongTitle
+
+    Users:
+      name: Users-${self:provider.stage}
+      partitionKey: ArtistID
+
+    Venue:
+      name: ${env:VENUE_TABLE_NAME}
+      partitionKey: City

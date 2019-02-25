@@ -1,4 +1,4 @@
-service: serverless-plugin-tables-example-aws
+service: serverless-plugin-tables-example
 
 plugins:
   - serverless-plugin-tables
