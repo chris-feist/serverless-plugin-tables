@@ -238,7 +238,7 @@ _Corresponds to [DynamoDB Stream Types][link-dynamo-stream-types]_
 
 ## Others
 
-If your provider or database isn't support, [open an issue to request it!][link-open-issue]
+If your provider or database isn't supported, [open an issue to request it!][link-open-issue]
 
 [icon-serverless]: http://public.serverless.com/badges/v3.svg
 [icon-license]: https://img.shields.io/github/license/chris-feist/serverless-plugin-tables.svg
