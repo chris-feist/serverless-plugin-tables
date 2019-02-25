@@ -173,14 +173,16 @@ _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo
 |--------------|----------|-------------|
 | partitionKey | **true** | The partition key. Refer to [keys](#dynamo-keys) |
 | sortKey | *false* | The sort key. Refer to [keys](#dynamo-keys) |
-| readUnits | *false* | The provisioned read units. Setting this changes the table to [provisioned][link-dynamo-provisioned-billing] billing mode. |
-| writeUnits | *false*  | The provisioned write units. Setting this changes the table to [provisioned][link-dynamo-provisioned-billing] billing mode. |
+| readUnits | *false* <sup>[1](#footnote-dynamo-provisioned-units)</sup> | The provisioned read units. Setting this changes the table to [provisioned][link-dynamo-provisioned-billing] billing mode. |
+| writeUnits | *false* <sup>[1](#footnote-dynamo-provisioned-units)</sup>  | The provisioned write units. Setting this changes the table to [provisioned][link-dynamo-provisioned-billing] billing mode. |
 | indexes | *false* | List of secondary [indexes](#dynamo-indexes)  |
 | streamType | *false* | The [stream type][link-dynamo-stream-types] of the table. See [Stream Types](#dynamo-stream-types) for valid values. |
 | ttlKey | *false* | The [Time To Live][link-dynamo-ttl] field |
 | encrypted | *false* | Enable [encryption][link-dynamo-encryption] |
 | pointInTimeRecovery | *false* | Enable [Point-in-Time Recovery][link-dynamo-recovery] |
 | tags | *false* | Key-value pairs of [resource tags][link-dynamo-tags] |
+
+<a name="footnote-dynamo-provisioned-units">[1]</a>: Both read and write units are required if one is defined
 
 #### <a name="dynamo-keys"></a> Keys:
 
@@ -215,15 +217,15 @@ Indexes can be [Global][link-dynamo-gsi] or [Local][link-dynamo-lsi] indexes. Th
 | Property     | Required | Description |
 |--------------|----------|-------------|
 | name | **true** | The name of the index |
-| partitionKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup>  | The partition key. Refer to [keys](#keys) |
-| sortKey | *false* <sup>[1](#footnote-dynamo-index-key)</sup>  | The sort key. Refer to [keys](#keys) |
-| readUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned read units |
-| writeUnits | *false* <sup>[2](#footnote-dynamo-index-units)</sup>  | The provisioned write units |
+| partitionKey | *false* <sup>[2](#footnote-dynamo-index-key)</sup>  | The partition key. Refer to [keys](#keys) |
+| sortKey | *false* <sup>[2](#footnote-dynamo-index-key)</sup>  | The sort key. Refer to [keys](#keys) |
+| readUnits | *false* <sup>[3](#footnote-dynamo-index-units)</sup>  | The provisioned read units |
+| writeUnits | *false* <sup>[3](#footnote-dynamo-index-units)</sup>  | The provisioned write units |
 | projection | *false* | The [projected fields][link-dynamo-index-projection]. Possible values include:<br>`all` - **[Default]** The entire record<br>`keys` - Only keys<br>A list of fields |
 
-<a name="footnote-dynamo-index-key">[1]</a>: At least on key is required
+<a name="footnote-dynamo-index-key">[2]</a>: At least one key is required
 
-<a name="footnote-dynamo-index-units">[2]</a>: Required if defined for the table
+<a name="footnote-dynamo-index-units">[3]</a>: Required if defined for the table
 
 #### <a name="dynamo-stream-types"></a> Stream Types:
 
