@@ -179,7 +179,7 @@ _Note that DynamoDB tables default to using [on-demand billing mode][link-dynamo
 | streamType | *false* | The [stream type][link-dynamo-stream-types] of the table. See [Stream Types](#dynamo-stream-types) for valid values. |
 | ttlKey | *false* | The [Time To Live][link-dynamo-ttl] field |
 | encrypted | *false* | Enable [encryption][link-dynamo-encryption] |
-| pointInTimeRecovery | *false* | Enable [Point-in-Time Recover][link-dynamo-recovery] |
+| pointInTimeRecovery | *false* | Enable [Point-in-Time Recovery][link-dynamo-recovery] |
 | tags | *false* | Key-value pairs of [resource tags][link-dynamo-tags] |
 
 #### <a name="dynamo-keys"></a> Keys:
