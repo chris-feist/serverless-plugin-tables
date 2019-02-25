@@ -81,6 +81,7 @@ custom:
 | Property     | Required | Default Value | Description |
 |--------------|----------|---------------|-------------|
 | name         | *false*  | The table key | The name of the table |
+| type         | *false*  | Varies by provider | The database type. Please refer to corresponding provider and database sections below. |
 
 ## AWS
 
