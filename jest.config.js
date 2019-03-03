@@ -13,12 +13,11 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: './coverage/jest',
   coverageThreshold: {
-    // TODO: Re-enable once there's more coverage
-    // global: {
-    //   statements: 90,
-    //   branches: 90,
-    //   functions: 90,
-    //   lines: 90,
-    // },
+    global: {
+      statements: 90,
+      branches: 90,
+      functions: 90,
+      lines: 90,
+    },
   },
 };

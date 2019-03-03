@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createProperties Global Secondary Indexes 1`] = `
+Array [
+  Object {
+    "IndexName": "OnlyPartitionGsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "only-partition",
+        "KeyType": "HASH",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "ALL",
+    },
+  },
+  Object {
+    "IndexName": "OnlyKeysGsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "both-partition",
+        "KeyType": "HASH",
+      },
+      Object {
+        "AttributeName": "both-sort",
+        "KeyType": "RANGE",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "ALL",
+    },
+  },
+  Object {
+    "IndexName": "ComplexKeysGsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "complex-partition",
+        "KeyType": "HASH",
+      },
+      Object {
+        "AttributeName": "complex-sort",
+        "KeyType": "RANGE",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "ALL",
+    },
+  },
+  Object {
+    "IndexName": "ProvisionedGsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "provisioned-partition",
+        "KeyType": "HASH",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "ALL",
+    },
+    "ProvisionedThroughput": Object {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 1,
+    },
+  },
+  Object {
+    "IndexName": "KeysProjectedGsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "projects-keys-partition",
+        "KeyType": "HASH",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "KEYS_ONLY",
+    },
+  },
+  Object {
+    "IndexName": "IncludesProjectionGsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "projects-includes-partition",
+        "KeyType": "HASH",
+      },
+    ],
+    "Projection": Object {
+      "NonKeyAttributes": Array [
+        "field1",
+        "field2",
+      ],
+      "ProjectionType": "INCLUDE",
+    },
+  },
+]
+`;
+
+exports[`createProperties Local Secondary Indexes 1`] = `
+Array [
+  Object {
+    "IndexName": "OnlyKeysLsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "id",
+        "KeyType": "HASH",
+      },
+      Object {
+        "AttributeName": "only-sort",
+        "KeyType": "RANGE",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "ALL",
+    },
+  },
+  Object {
+    "IndexName": "ComplexKeysLsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "id",
+        "KeyType": "HASH",
+      },
+      Object {
+        "AttributeName": "complex-sort",
+        "KeyType": "RANGE",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "ALL",
+    },
+  },
+  Object {
+    "IndexName": "ProvisionedLsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "id",
+        "KeyType": "HASH",
+      },
+      Object {
+        "AttributeName": "provisioned-sort",
+        "KeyType": "RANGE",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "ALL",
+    },
+    "ProvisionedThroughput": Object {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 1,
+    },
+  },
+  Object {
+    "IndexName": "KeysProjectedLsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "id",
+        "KeyType": "HASH",
+      },
+      Object {
+        "AttributeName": "projects-keys-sort",
+        "KeyType": "RANGE",
+      },
+    ],
+    "Projection": Object {
+      "ProjectionType": "KEYS_ONLY",
+    },
+  },
+  Object {
+    "IndexName": "IncludesProjectionLsi",
+    "KeySchema": Array [
+      Object {
+        "AttributeName": "id",
+        "KeyType": "HASH",
+      },
+      Object {
+        "AttributeName": "projects-includes-sort",
+        "KeyType": "RANGE",
+      },
+    ],
+    "Projection": Object {
+      "NonKeyAttributes": Array [
+        "field1",
+        "field2",
+      ],
+      "ProjectionType": "INCLUDE",
+    },
+  },
+]
+`;

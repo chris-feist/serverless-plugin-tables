@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TablesPlugin initializes plugin 1`] = `
+Object {
+  "tables": Object {
+    "commands": Object {
+      "process": Object {
+        "lifecycleEvents": Array [
+          "process",
+        ],
+        "usage": "Process table definitions",
+      },
+    },
+    "lifecycleEvents": Array [
+      "tables",
+    ],
+    "options": Object {
+      "debug": Object {
+        "shortcut": "d",
+        "usage": "Debug the plugin",
+      },
+      "verbose": Object {
+        "shortcut": "v",
+        "usage": "Verbose output",
+      },
+    },
+    "usage": "Easily manage table resources",
+  },
+}
+`;
+
+exports[`TablesPlugin initializes plugin 2`] = `
+Object {
+  "before:package:createDeploymentArtifacts": [Function],
+  "tables:process:process": [Function],
+}
+`;

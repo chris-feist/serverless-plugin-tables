@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addToResources adds to resources 1`] = `
+Object {
+  "Resources": Object {
+    "Res1": Object {
+      "Properties": Object {
+        "TableName": "Table1",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+    "Res2": Object {
+      "Properties": Object {
+        "TableName": "Table2",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+    "Res3": Object {
+      "Properties": Object {
+        "TableName": "Table3",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+    "Res4": Object {
+      "Properties": Object {
+        "TableName": "Table4",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+}
+`;
+
+exports[`addToResources initializes resources 1`] = `
+Object {
+  "Resources": Object {
+    "TestResource": Object {
+      "Properties": Object {
+        "TableName": "TestTable",
+      },
+      "Type": "AWS::DynamoDB::Table",
+    },
+  },
+}
+`;

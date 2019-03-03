@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`aws index checkPluginCompatibility serverless-dynamodb-local hooks spawn process 1`] = `
+Array [
+  Array [
+    "process",
+  ],
+  Array [
+    "process",
+  ],
+  Array [
+    "process",
+  ],
+]
+`;
