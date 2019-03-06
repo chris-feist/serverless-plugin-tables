@@ -93,7 +93,7 @@ custom:
 | type         | *false*  | `'dynamo'` | The database type. Please refer to corresponding database sections below. |
 | template     | *false*  | `null` | Custom CloudFormation template overrides. This allows you to implement features not covered, override the generated output, or do whatever other crazy stuff you have in mind 😀 |
 
-#### Example
+#### <a name="aws-example"></a> Example
 ```yaml
 resources:
   tables:
