@@ -30,10 +30,6 @@ Install the dependency:
 ```sh
 yarn add -D serverless-plugin-tables
 ```
-or
-```sh
-npm install -D serverless-plugin-tables
-```
 
 Add `serverless-plugin-tables` to your `serverless.yml` file:
 
