@@ -6,7 +6,6 @@
   "repository": "github:chris-feist/serverless-plugin-tables",
   "main": "./lib/index.js",
   "scripts": {
-    "preinstall": "npx use-yarn",
     "test": "jest",
     "integration": "jest --config jest.integration.config.js",
     "lint": "yarn run lint:eslint",
