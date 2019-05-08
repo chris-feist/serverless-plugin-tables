@@ -1,6 +1,6 @@
 {
   "name": "serverless-plugin-tables",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "A Serverless plugin that makes adding tables to your service file easy",
   "repository": "github:chris-feist/serverless-plugin-tables",
